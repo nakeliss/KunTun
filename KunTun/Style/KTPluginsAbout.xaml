@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:KunTun.Style"
+                    xmlns:materialDesign="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf">
+
+    <Style x:Key="MaterialDesignRadioButton" BasedOn="{StaticResource MaterialDesignRadioButton}" TargetType="RadioButton">
+        <Setter Property="Background" Value="Aqua"/>
+        
+
+    </Style>
+    
+    
+    
+</ResourceDictionary>

@@ -1,0 +1,37 @@
+﻿<Window x:Name="windowX" x:Class="KunTun.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:KunTun"
+        mc:Ignorable="d" Height="768" Width="1366" MinWidth="1366" MinHeight="768" FontSize="16" Title="KunTun - 你饿了吗 (标题栏好长啊，虽然没有什么必要，但我就是想写长一点" 
+        FontFamily="/KunTun;component/Res/Font/#Alibaba PuHuiTi R" WindowStartupLocation="CenterScreen" ContentRendered="WindowX_ContentRendered" Loaded="WindowX_Loaded"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal" 
+        TextOptions.TextRenderingMode="Auto"
+            >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="479*"/>
+            <ColumnDefinition Width="100*"/>
+        </Grid.ColumnDefinitions>
+        <Grid/>
+        <Grid x:Name="KTContents" Grid.Column="1">
+            <Grid x:Name="KTPlugins">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="359*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel x:Name="PluginsMenu" Margin="0,0,0,5"/>
+                <Grid x:Name="PluginsContents" Grid.Column="1"/>
+
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
