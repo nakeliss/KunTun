@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
 using System.IO;
+using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,12 +14,11 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-using KunTunPluginLib;
-
+using KunTunLib;
 
 namespace KunTun
 {
@@ -39,17 +39,10 @@ namespace KunTun
         {
 
             var dir = new DirectoryInfo(@"./plugins");
-            if (dir.Exists)
-            {
-
-            }
-            else
+            if (!dir.Exists)
             {
                 dir.Create();
             }
-
-            Thickness PluginsMenuBtnsThickness = new Thickness() { Left = 10, Top = 5, Right = 10, Bottom = 0 };
-            FontFamily PluginsMenuBtnsFontFamily = new FontFamily("Microsoft YaHei");
 
             if (dir.Exists)
             {
@@ -66,7 +59,13 @@ namespace KunTun
                     MessageBox.Show(compositionEx.ToString());
                 }
 
+                Plugins.OrderBy(p => p.Metadata.Priority);
+
+
                 int i = 0;
+                Thickness PluginsMenuBtnsThickness = new Thickness() { Left = 10, Top = 10, Right = 10, Bottom = 0 };
+                FontFamily PluginsMenuBtnsFontFamily = new FontFamily("Microsoft YaHei");
+
 
                 foreach (var plugin in Plugins)
                 {
@@ -78,6 +77,8 @@ namespace KunTun
                         Margin = PluginsMenuBtnsThickness,
                         FontFamily= PluginsMenuBtnsFontFamily,
                         Name= "PluginsMenuBtns"+i,
+
+
                     }) ;
 
                     Grid grid;
@@ -102,8 +103,6 @@ namespace KunTun
         }
 
 
-
-
         protected override void OnClosing(CancelEventArgs e)
         {
             container?.Dispose();
@@ -111,10 +110,87 @@ namespace KunTun
 
         }
 
-        private void WindowX_Loaded(object sender, RoutedEventArgs e)
+        private void mBtnHome_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
+        private void tgeMainMenuPin_Checked(object sender, RoutedEventArgs e)
+        {
+            tgeMainMenu.IsEnabled = false;
+        }
+
+        private void tgeMainMenuPin_Unchecked(object sender, RoutedEventArgs e)
+        {
+            tgeMainMenu.IsEnabled = true;
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            windowX.Close();
+        }
+
+        private void btnMaximize_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = (WindowState == WindowState.Normal ? WindowState.Maximized : WindowState.Normal);
+
+            //Storyboard sb = new Storyboard();
+            //DoubleAnimation da1 = new DoubleAnimation()
+            //{
+            //    From = windowX.Width,
+            //    To= SystemParameters.WorkArea.Width,
+            //    //AutoReverse = true,
+            //    Duration = new Duration(new TimeSpan(0, 0, 0, 0, 500)),
+            //};
+            //DoubleAnimation da2 = new DoubleAnimation()
+            //{
+            //    From = windowX.Height,
+            //    To= SystemParameters.WorkArea.Height,
+            //    //AutoReverse = true,
+            //    Duration = new Duration(new TimeSpan(0, 0, 0, 0, 500)),
+            //};
+            //Storyboard.SetTarget(da1, windowX);
+            //Storyboard.SetTargetProperty(da1, new PropertyPath("Width"));
+            //sb.Children.Add(da1);
+            //Storyboard.SetTarget(da2, windowX);
+            //Storyboard.SetTargetProperty(da2, new PropertyPath("Height"));
+            //sb.Children.Add(da2);
+            //sb.Begin();
+
+
+            //windowX.Width = SystemParameters.FullPrimaryScreenWidth;
+            //windowX.Height = SystemParameters.FullPrimaryScreenHeight;
+            //windowX.Top = (SystemParameters.FullPrimaryScreenHeight - windowX.Height) / 2;
+            //windowX.Left = (SystemParameters.FullPrimaryScreenWidth - windowX.Width) / 2;
+
+
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            windowX.WindowState = WindowState.Minimized;
+        }
+
+        private void WindowTitle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            windowX.DragMove();
+        }
+
+        private void colorZone_MenuBG_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tgeMainMenu.IsChecked = false;
+        }
+
+        private void windowX_Initialized(object sender, EventArgs e)
+        {
+            Core.LoadAll();
+        }
+
+        private void windowX_StateChanged(object sender, EventArgs e)
+        {
+            
+
+            
+        }
     }
 }

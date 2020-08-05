@@ -5,11 +5,17 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KunTun", "KunTun\KunTun.csproj", "{14549282-D70A-497E-A271-D8BC3D68A147}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KunTunPluginLib", "KunTunPluginLib\KunTunPluginLib.csproj", "{F27E387A-8107-4647-98BA-7AC66829BBB5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTPicbot", "KTPicbot\KTPicbot.csproj", "{D5721EA9-320B-4D30-A7EC-287653FEF6CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTPluginHome", "KTPluginHome\KTPluginHome.csproj", "{E171621A-21F1-4A9F-AF32-75AEF6B9B307}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KunTunLib", "KunTunLib\KunTunLib.csproj", "{F27E387A-8107-4647-98BA-7AC66829BBB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTWebSocket", "KTWebSocket\KTWebSocket.csproj", "{748948B1-09DE-4699-AAC1-1FC5CE043562}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTNiShuiHanAide", "KTNiShuiHanAide\KTNiShuiHanAide.csproj", "{2E4AAD17-915C-4EA8-96A4-40A5673FAABA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTCaptureScreenShot", "KTCaptureScreenShot\KTCaptureScreenShot.csproj", "{F14326C6-42C0-4250-BD38-AA4DF9350E04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,10 +27,6 @@ Global
 		{14549282-D70A-497E-A271-D8BC3D68A147}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{14549282-D70A-497E-A271-D8BC3D68A147}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{14549282-D70A-497E-A271-D8BC3D68A147}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D5721EA9-320B-4D30-A7EC-287653FEF6CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D5721EA9-320B-4D30-A7EC-287653FEF6CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5721EA9-320B-4D30-A7EC-287653FEF6CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -33,6 +35,22 @@ Global
 		{E171621A-21F1-4A9F-AF32-75AEF6B9B307}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E171621A-21F1-4A9F-AF32-75AEF6B9B307}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E171621A-21F1-4A9F-AF32-75AEF6B9B307}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27E387A-8107-4647-98BA-7AC66829BBB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{748948B1-09DE-4699-AAC1-1FC5CE043562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{748948B1-09DE-4699-AAC1-1FC5CE043562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{748948B1-09DE-4699-AAC1-1FC5CE043562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{748948B1-09DE-4699-AAC1-1FC5CE043562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E4AAD17-915C-4EA8-96A4-40A5673FAABA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E4AAD17-915C-4EA8-96A4-40A5673FAABA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E4AAD17-915C-4EA8-96A4-40A5673FAABA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E4AAD17-915C-4EA8-96A4-40A5673FAABA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F14326C6-42C0-4250-BD38-AA4DF9350E04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F14326C6-42C0-4250-BD38-AA4DF9350E04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F14326C6-42C0-4250-BD38-AA4DF9350E04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F14326C6-42C0-4250-BD38-AA4DF9350E04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

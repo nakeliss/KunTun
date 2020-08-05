@@ -82,9 +82,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KunTunPluginLib\KunTunPluginLib.csproj">
+    <ProjectReference Include="..\KunTunLib\KunTunLib.csproj">
       <Project>{F27E387A-8107-4647-98BA-7AC66829BBB5}</Project>
-      <Name>KunTunPluginLib</Name>
+      <Name>KunTunLib</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
